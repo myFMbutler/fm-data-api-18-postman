@@ -1,0 +1,801 @@
+{
+	"info": {
+		"_postman_id": "58a2febd-2ba3-4d7e-ae26-194071d4e12a",
+		"name": "DataAPI18",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "metadata",
+			"item": [
+				{
+					"name": "Product info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/productInfo",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"productInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Database Names",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Layout Names",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2598d2b2e4a6172f1e12512521638a9a1c33c320b7e4fcd3150a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Script Names",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2598d2b2e4a6172f1e12512521638a9a1c33c320b7e4fcd3150a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/scripts",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"scripts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Layout Metadata",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "29b02c8e2c95a5e8a8b07078989ab25b4645dec2741e973cf37c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "con",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"recordId\": 2\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Old Layout Metadata",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "29b02c8e2c95a5e8a8b07078989ab25b4645dec2741e973cf37c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"recordId\": 2\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/metadata",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "records",
+			"item": [
+				{
+					"name": "Get records",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Record By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records/{recordId}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records",
+								"{recordId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"fieldData\": {\n     \"First Name\": \"Jhon\",\n     \"Last Name\": \"Doe\"\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"fieldData\": {\n     \"First Name\": \"John\",\n     \"Last Name\": \"Doe\"\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records/{recordId}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records",
+								"{recordId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records/{recordId}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records",
+								"{recordId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Duplicate Record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "c0743bcba9537986d87885ccc1f79d897a14a1ee69304d3ad405",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records/{recordId}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records",
+								"{recordId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find records",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "29b02c8e2c95a5e8a8b07078989ab25b4645dec2741e973cf37c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"query\":[{\"First Name\":\"==\\\"Jhon\\\"\"}]\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/_find",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"_find"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "scripts",
+			"item": [
+				{
+					"name": "Execute Script",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "29b02c8e2c95a5e8a8b07078989ab25b4645dec2741e973cf37c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"script.param\": \"\"\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/script/{scriptName}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"script",
+								"{scriptName}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/sessions",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/sessions/{sessionToken}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"sessions",
+								"{sessionToken}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "container",
+			"item": [
+				{
+					"name": "Upload to Container Field",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records/{recordId}/containers/{containerFieldName}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records",
+								"{recordId}",
+								"containers",
+								"{containerFieldName}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload to Container Field Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "753fc54185a6b5136c64aaf1fc162a229fbd7146ad4cac743f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/layouts/{layout}/records/{recordId}/{containerFieldName}/containers/{containerFieldRepetition}",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"layouts",
+								"{layout}",
+								"records",
+								"{recordId}",
+								"{containerFieldName}",
+								"containers",
+								"{containerFieldRepetition}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "globals",
+			"item": [
+				{
+					"name": "Set Global Fields",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "29b02c8e2c95a5e8a8b07078989ab25b4645dec2741e973cf37c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"globalFields\":{\"Global Field\":\"1\"}\n}"
+						},
+						"url": {
+							"raw": "https://{serveur}/fmi/data/v1/databases/{database}/globals",
+							"protocol": "https",
+							"host": [
+								"{serveur}"
+							],
+							"path": [
+								"fmi",
+								"data",
+								"v1",
+								"databases",
+								"{database}",
+								"globals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
