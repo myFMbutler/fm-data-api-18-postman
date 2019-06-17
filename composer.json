@@ -1,0 +1,16 @@
+{
+    "name": "myfmbutler/fm-data-api-18-postman",
+    "type": "library",
+    "description": "FileMaker 18 API Postman Collection",
+    "Keywords": ["Lesterius", "FileMaker", "API", "REST", "Database", "Postman"],
+    "license": "gpl-3.0",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "authors": [
+      {
+        "name": "Lesterius",
+        "email": "infoFR@lesterius.com",
+        "homepage": "https://www.lesterius.com"
+      }
+    ]
+}
