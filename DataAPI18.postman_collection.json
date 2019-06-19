@@ -11,6 +11,16 @@
 				{
 					"name": "Product info",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "f788f9db760445f77b96ff6fc758f9a088875ea677e2606f30b3",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
